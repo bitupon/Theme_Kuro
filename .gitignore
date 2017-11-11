@@ -1,0 +1,17 @@
+node_modules/
+
+deploy/
+
+dist/libs/bootstrap/
+
+dist/libs/font-awesome/
+
+dist/libs/jquery/
+
+dist/libs/popper.js/
+
+dist/libs/slick-carousel/
+
+dist/libs/eonasdan-bootstrap-datetimepicker/
+
+dist/libs/moment/

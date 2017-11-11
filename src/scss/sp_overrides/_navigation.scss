@@ -1,0 +1,259 @@
+/* 
+ * * * _navigation.scss
+ * * *
+ */
+
+.#{$kr}{
+	&-navigation{
+		$nav:&;
+		z-index: 100000;
+		@extend #list;		
+		
+
+		.ms-core-listMenu-horizontalBox{
+			display: block;
+		}
+
+		.ms-core-listMenu-root {
+			@extend #list;
+			display: block;		
+    		float: none;
+			line-height: 1;
+			height: 45px;
+			
+			> li{
+				position: relative;			
+				line-height: 1;
+				a{
+					float: left;
+				}
+
+				li {
+					&:last-child{
+						.ms-core-listMenu-item{					
+										
+						}
+					}
+
+					&:hover,&.hover,&.hover-off{
+						> ul{
+							&.dynamic{
+								display: block;							
+								left: 0px!important;
+								overflow: inherit;
+							}	
+						}
+					}
+				}
+
+				&:hover,&.hover,&.hover-off{
+					> ul{
+						&.dynamic{
+							display: block;							
+							left: 0px!important;
+							overflow: inherit;
+						}	
+					}
+				}
+			}
+			
+
+			.ms-core-listMenu-item{
+				position: relative;
+				display: inline-block;
+				padding: 11px 20px;
+				color: #565a65;
+				text-decoration: none;
+				font-size: 14px;
+				margin: 0!important;
+				line-height: 21px;
+				float: left;
+				font-weight: 400;
+				transition: color $tr-medium;	
+
+				&:hover{
+					color:  map-get($theme, pri-color-dk);							
+				}
+				&.active,&.ms-core-listMenu-selected{
+					color:  map-get($theme, pri-color-dk);				
+				}
+
+				+ ul{
+					&.dynamic{
+						$navMenu:&;						
+						display: none;
+						position: absolute;			
+						top:44px!important;
+						background-color: #dddee0;
+					    box-shadow: none;
+    					border: none;
+						border-top: solid 2px #b5b7bc;
+						min-width:200px;
+						max-width:400px;
+						@extend #ellipsis;
+						z-index: 100000;
+						@extend #list;
+
+
+						> li{
+							position: relative;
+							.ms-core-listMenu-item {	
+								display: block;							
+								margin: 0!important;
+								padding:10px 20px;
+								cursor: pointer;
+								transition: all $tr-medium;
+								color: inherit;			
+								border:none;
+								float: none;
+								@extend .ellipsis;
+								&:hover{
+									background-color: #d0d1d4;				
+									color:  map-get($theme, pri-color-dk);			
+								}
+
+								&:focused,&:active{
+									background-color: #d0d1d4;
+									color:  map-get($theme, pri-color-dk);
+								}
+
+							
+							}
+
+							&:hover,&.hover,&.hover-off{
+								> ul{
+									&.dynamic{
+										display: block;
+										top: -4px !important;
+										right: 0px !important;
+										overflow: inherit;
+									}
+								}
+							}												
+						}							
+					}
+				}			
+
+				.dynamic-children.additional-background{
+					padding: 0;
+					background-image: none;
+					&:before{
+						@extend .#{$kr}-icn-fa;
+						content: "\f107";
+						position: absolute;
+						right: 0px;
+						top: 16px;
+						font-size: 14px;
+					}
+				}
+			}			
+		}		
+	}
+}
+
+
+
+
+/*******    Small Devices/Phone ***********************/
+
+@media(max-width: 960px) {
+			
+	.#{$kr}{
+		&-navigation{
+			$nav:&;
+			display: none;
+			position: absolute;
+			top:45px;
+			width:100%;
+
+			&.pull-right{
+				float: none;
+			}
+			
+			&#{$nav}--settings{
+				display: block;
+				position: relative;
+				top:0;
+				width: auto;
+				&.pull-right{
+					float: right;
+				}
+			}
+				
+			.ms-core-listMenu-horizontalBox{			
+
+				ul,li{
+					display: block!important;	
+				}
+
+				ul{
+					padding:0;
+				}
+			}
+
+			.ms-core-listMenu-root {					
+				> li{						
+					
+					> a{
+						float: none;
+					}
+
+					ul {
+						li{
+							&:hover,&.hover,&.hover-off{
+								> ul{
+									&.dynamic{			
+										display: block!important;								
+										height: auto;
+									}	
+								}					
+							}
+						}
+					}
+				}				
+
+				.ms-core-listMenu-item{				
+					display: block;					
+					height: auto;					
+					float: none;
+					background-color:  map-get($theme, gray--hover)!important;	
+
+					&:hover,&.active,&.ms-core-listMenu-selected{					
+						background-color:  #d1d1d1!important;								
+					}			
+
+					+ ul{
+						&.dynamic{
+							$navMenu:&;								
+							width:100%!important;
+							border: none;
+							top:44px!important;
+							max-width: none;
+										
+
+							> li{
+								position: relative;
+								.ms-core-listMenu-item {	
+								 	background-color:  #c5c5c5!important;	
+									
+									&:hover,&:focus,&:active{
+										background-color: #b8b8b8!important;												
+									}
+							
+								}																	
+							}								
+						}
+					}			
+
+					.dynamic-children.additional-background{					
+						&:before{							
+							right: 10px;
+							top: 10px;
+							font-size: 18px;
+						}
+					}
+				}			
+			}		
+		}
+	}
+}

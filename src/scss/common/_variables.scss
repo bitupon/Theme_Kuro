@@ -1,0 +1,35 @@
+/*
+ *@_variables : all variables 
+ *
+ */
+
+ $kr:"kr";
+
+ $font-gray:#8d8d8d;
+
+
+//Transition Speed
+ $tr-slow:.2s;
+ $tr-medium:.5s;
+ $tr-fast:.9s;
+
+
+ //Font $pri-color
+ $f-color: #525c68;
+ $f-color-light:#758292;
+
+
+  $theme:(
+     pri-color :#c91119,
+     pri-color--hover :#ee232b,
+     pri-color-dk :#e6121a,
+     pri-color-dk--hover:#ce1017,
+     sec-color: #80878f,
+     sec-color--hover: #737a82,
+     sec-color-dk:#676d74, //Need to update
+     sec-color-dk--hover:#5b6167, //Need to update
+   gray: #edeef0,
+     gray--hover: #dedede,
+     gray-dk: #707070,
+     gray-dk--hover: #5d5d5d
+ )

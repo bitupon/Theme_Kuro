@@ -1,0 +1,172 @@
+/*
+	* _forms.scss - UI Form Component
+	*
+*/
+
+
+.#{$kr}{
+    &-btn{
+        border-radius: 0;
+        font-size: 14px;
+        font-weight: 400;
+        padding: 7px 15px;
+        height: 34px;
+        color: #fff;
+        background-color:  map-get($theme,sec-color);
+        margin: 0;
+        cursor: pointer;
+        transition: all .8s;
+        &:hover,&:focus,&:active{
+            color: #fff;
+            background-color:  map-get($theme,sec-color--hover);
+            outline: none;
+            box-shadow: none;
+        }
+
+        > .fa{
+            font-size: 18px;
+        }
+
+        &--md{
+            height: 40px;
+            font-size: 16px;
+            padding: 6px 15px;
+        }
+
+    
+
+        
+        &--primary{    	
+            background-color: map-get($theme,pri-color);  
+            &:hover,&:focus,&:active{
+                background-color: map-get($theme,pri-color--hover);
+            }  	
+        }
+
+        &--secondary{
+            background-color: map-get($theme,sec-color);  
+            &:hover,&:focus,&:active{
+                background-color: map-get($theme,sec-color--hover);
+            }  
+        }
+
+        &--icn{
+            @include square(35px);          
+            padding: 0;
+            text-align: center;
+            font-size: 20px;
+        
+        .fa{
+            margin:0;
+        }
+
+        &.br-l{
+                border-left:solid 1px #8d9499;
+        }
+        
+        &.br-r{
+                border-right:solid 1px #8d9499;
+        }
+        
+        }
+
+    }
+}
+
+
+.form{
+    &-group{
+        > label{
+            font-weight: 400;
+            text-transform: capitalize;
+            &.required{
+                &:after{
+                    content: "*";
+                    color: #b30000;
+                    font-weight: 600;
+                    margin-left: 2px;
+                }
+            }
+        }
+    }
+
+    &-control{
+        border-radius:0;
+        padding: 6px 12px!important;
+        border: 1px solid transparent!important;
+        box-shadow: none;
+        background-color: #edeef0;
+        transition: all $tr-fast;
+        &:focus{
+            background-color: #f5f5f5!important;
+            box-shadow: none;
+            outline: none;
+        }
+
+        &--sm{
+            height: 25px;
+            font-size: 12px;
+        }
+        
+        &--md{
+            height: 40px;
+        }
+        
+        &--lg{
+            height: 50px;
+        }       
+        
+    }
+}
+
+
+.input{
+    &-group{
+        $inpGrp:&;
+        #{$inpGrp}-addon{
+            border-radius:0;
+            background: #80878f;
+            border: none;
+            color: #fff;
+            > button{
+                background: transparent;
+                border: none;
+                outline: none;               
+                color: #fff;
+                padding: 0;
+                min-width: 0;
+                margin: 0;
+                font-size: inherit;
+                &[disabled]{
+                    .fa{
+                        color:#ccc;
+                    }
+                }
+            }
+        }  
+
+        &--sm{
+            height: 25px;
+            .form{
+                &-control{
+                    @extend .form-control--sm;
+                }
+            }
+
+            #{$inpGrp}-addon{
+                font-size: 10px;
+            } 
+
+            &-w{                
+                width: 200px;
+            }
+        }      
+    }
+}
+
+textarea{
+    &.form-control{
+        max-width: 100%;
+        max-height: 150px;
+    }
+}

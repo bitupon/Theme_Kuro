@@ -1,0 +1,137 @@
+/*
+	* _carousel.scss - UI Carousel Component
+	*
+*/
+
+.#{$kr}{
+	&-carousel{
+        $carousel:&;
+        height:300px;
+
+         .slick{
+            &-list,&-track{
+                height: 100%!important;
+            }
+         }
+
+        &__horizontal{
+          
+            display: inline-block;
+            float: left;
+            width: 70%;
+            height:100%;
+
+            .slick{               
+                &-slide{
+                   img{
+                        height: 100%;
+                        width: 100%;
+                   }
+
+                   &:focus{
+                        outline: none;
+                   }
+                }
+
+                &-arrow{
+                    position: absolute;                   
+                    z-index: 1000;
+                    top:40%;
+                    height: 60px;
+                    line-height: 60px;
+                    width: 30px;
+                    background-color: rgba(0,0,0,0.4);
+                    color: #fff;
+                    cursor:pointer;
+
+                    &.prev{
+                        border-top-right-radius: 100px;
+                        border-bottom-right-radius: 100px;
+                        left:0;
+                        padding-left: 6px;
+                    }
+                    &.next{
+                        border-top-left-radius: 100px;
+                        border-bottom-left-radius: 100px;
+                        right:0;
+                        text-align: right;
+                        padding-right: 6px;
+                    }
+                }
+
+                &-dots{
+                    li{
+                        button{
+                            background-color: #ccc;
+                            @include square(10px);
+                            border-radius:20px;
+                            &:before{
+                                display: none;
+                            }
+                        }
+
+                        &.slick-active{
+                            button{
+                                background-color: #525c68 ;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &__vertical{
+            display: inline-block;            
+            float: left;
+            width: 30%;
+            height:100%;
+            .slick{
+                &-slide{
+                   
+                    height: 33.33%;
+                    
+                }
+            }
+
+            #{$carousel}__content{
+                padding:10px;
+                background-color: #8d97a3;
+                border-bottom: solid 1px #ccc;
+
+                &-img{
+                    display: inline-block;
+                    float: left;
+                    height: 100%;
+                    width: 30%;
+                    
+                     img{
+                         @include square(100%);
+                     }
+                }
+
+                &-desc{
+                    display: inline-block;
+                    float: left;
+                    height: 100%;
+                    width: 70%;
+                    padding: 5px 0 0 10px;
+                    
+                     overflow: hidden;
+                }
+
+                &-title{
+                    font-size: 14px;
+                    margin: 0;
+                    font-weight: 600;
+                    margin-bottom: 10px;
+                }
+
+                &-text{
+                    font-size: 12px;
+                    overflow: hidden;
+                    color:#fff;
+                }
+            }
+        }
+    }
+}

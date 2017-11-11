@@ -1,0 +1,27 @@
+/*
+	* _block.scss - UI Block Component
+	*
+*/
+
+.#{$bd}-block{
+	background-color: #f5f5f5;
+	padding:0 5px;
+	
+
+	&__header{
+		color:$pri-color;		
+	    font-size: 20px;
+	    font-weight: 600;
+	    padding: 20px 10px;
+	    border-bottom: solid 2px #e2e2e2;
+
+	    .fa{
+	    	margin-right: 10px;
+    		vertical-align: initial;
+	    }
+	}
+
+	&__body{
+		padding: 15px 10px;
+	}
+}

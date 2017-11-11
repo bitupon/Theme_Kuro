@@ -1,0 +1,37 @@
+/*
+	* _page.scss - UI Page layout
+	*
+*/
+
+.#{$kr}{
+	&-main{	
+		height:100%;
+		width:100%;
+	}
+
+	&-content{	
+		margin: 0 auto;	
+		height: calc(100% - 90px);	
+		overflow: auto;
+	}
+
+	&-page{	
+		margin: auto;
+		padding: 20px 15px;
+
+		&--boxed{
+			width: 1170px;
+		}
+	}
+}
+
+@media(max-width: 960px) {
+    
+	.#{$kr}{
+		&-page{	
+			&--boxed{
+				width:auto;
+			}
+		}		
+	}
+}

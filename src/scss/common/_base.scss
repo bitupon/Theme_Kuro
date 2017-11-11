@@ -1,0 +1,27 @@
+/*
+	* _base.scss - UI base layout
+	*
+*/
+@import "common/variables";
+@import "common/mixins";
+
+html,body{
+	padding: 0;
+	margin:0;
+	font-size:14px;
+	color:  $f-color!important;
+	font-family: 'Roboto', sans-serif;
+	height:100%;
+	width:100%;
+}
+
+a{
+	&:hover{
+		text-decoration: none;
+	}
+}
+
+ul{
+	@extend #list;
+}
+

@@ -1,0 +1,92 @@
+/*
+	* _navigation.scss - UI Navigation Component
+	*
+*/
+
+.#{$kr}{
+	&-navigation{
+		$nav:&;
+		
+		@extend #list;
+		&:after{
+		    content: "";
+			display: block;
+			clear: both;
+		}
+
+		> li{
+			position: relative;
+			float: left;	
+
+			&:hover{			
+
+				> #{$nav}__menu{
+					display: block;
+				}
+			}			
+		}
+
+		&__item{
+		    display: inline-block;
+			padding: 11px 20px;
+			color: #565a65;
+			text-decoration: none;
+			font-size: 14px;
+
+			&:hover{
+				color:map-get($theme,pri-color-dk); 		
+			}			
+		}
+
+		&__menu{
+			$navMenu:&;
+			display: none;
+			position: absolute;			
+			top:42px;
+			background-color: #dddee0;
+		    box-shadow: none;
+    		border: none;
+			border-top: solid 2px #b5b7bc;
+			width:200px;
+			@extend #ellipsis;
+			z-index: 100000;
+			@extend #list;
+
+			#{$navMenu}-item{
+				display: block;
+				padding:10px 20px;
+				color: inherit;
+				cursor: pointer;
+				transition: all $tr-medium;
+				&:hover{
+					background-color: #d0d1d4;
+					color:map-get($theme,pri-color);
+				}
+			}
+			
+		}
+
+		&--settings{
+			#{$nav}__item{
+				padding: 0px 14px;		
+				color: #565a65;		
+				font-size: 11px;
+   				letter-spacing: 1px;
+				border-right: solid 1px #ccc;
+				text-transform: uppercase;
+						
+			}
+
+			li{
+				&:last-child{
+					#{$nav}__item{
+						border-right: none;		
+						padding-right: 0;							
+					}
+				}
+			}
+		}
+
+	}
+
+}

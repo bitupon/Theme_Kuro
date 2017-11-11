@@ -1,0 +1,45 @@
+.#{$kr}-weather{
+	$weather:&;
+	display: inline-block;
+    position: relative;
+    width: 116px;
+    max-width: 200px;
+    padding: 10px 5px;
+
+    &:after{
+		@extend #after-clear;
+	}
+
+	&__pic{
+		color: #26b2cd;
+    	font-size: 55px;
+		text-align: center;
+	}
+
+	&__location{	
+		position: relative;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		font-size: 14px;
+		text-align: center;
+		@extend .ellipsis;		
+	}
+
+	&__temp{	
+		position: relative;
+		font-size: 40px;
+    	font-weight: 600;	
+		text-align: center;	
+		@extend .ellipsis;		
+	}
+
+	&__date{
+		position: relative;
+		font-weight: 100;		
+		letter-spacing: 1px;
+		font-size: 10px;
+		@extend .ellipsis;	
+		text-align: center;	
+	}
+}
