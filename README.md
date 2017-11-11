@@ -3,7 +3,8 @@ Kuro - A Sharpoint theme for one of my personal proeject.It has all the static H
 
 # Getting Started
 
-##1.	Installation process
+1.	Installation process
+
     NPM install to download all the dependencies and dev dependencies.
     Bower install to download all the required packages
 
